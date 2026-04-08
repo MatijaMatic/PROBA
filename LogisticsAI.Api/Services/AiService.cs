@@ -72,8 +72,16 @@ A: SELECT TOP 10 Carrier, SUM(WeightTons) AS TotalWeight FROM Transports WHERE Y
 
         var sql = response.Value.Content[0].Text.Trim();
 
-        _logger.LogInformation("Generated SQL for question '{Question}': {Sql}", userQuestion, sql);
+        _logger.LogInformation("Generated SQL for question '{Question}': {Sql}",
+            SanitizeForLog(userQuestion), sql);
 
         return sql;
     }
+
+    /// <summary>
+    /// Removes newline characters from user input before logging to prevent log-injection attacks.
+    /// </summary>
+    private static string SanitizeForLog(string value) =>
+        value.Replace("\r", "\\r", StringComparison.Ordinal)
+             .Replace("\n", "\\n", StringComparison.Ordinal);
 }

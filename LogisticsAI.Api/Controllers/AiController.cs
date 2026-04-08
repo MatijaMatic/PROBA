@@ -35,7 +35,7 @@ public class AiController : ControllerBase
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to generate SQL for question: {Question}", request.Question);
+            _logger.LogError(ex, "Failed to generate SQL for question: {Question}", SanitizeForLog(request.Question));
             return StatusCode(502, new { error = "AI service error.", detail = ex.Message });
         }
 
@@ -57,4 +57,11 @@ public class AiController : ControllerBase
             return StatusCode(500, new { error = "SQL execution failed.", detail = ex.Message, generatedSql = sql });
         }
     }
+
+    /// <summary>
+    /// Removes newline characters from user input before logging to prevent log-injection attacks.
+    /// </summary>
+    private static string SanitizeForLog(string value) =>
+        value.Replace("\r", "\\r", StringComparison.Ordinal)
+             .Replace("\n", "\\n", StringComparison.Ordinal);
 }
