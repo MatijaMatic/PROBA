@@ -1,0 +1,88 @@
+﻿@page "/"
+
+<PageTitle>AI Logistics Platform – Dashboard</PageTitle>
+
+<h1>🚂 AI Logistics Platform</h1>
+
+<p class="lead">
+    Welcome to the AI Logistics Platform — an intelligent system for transport management
+    powered by <strong>ASP.NET Core</strong>, <strong>OpenAI GPT-4o mini</strong>,
+    <strong>Python + scikit-learn</strong>, and <strong>SQL Server</strong>.
+</p>
+
+<div class="row mt-4">
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 border-primary">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">🧠 Module 1 – NL → SQL</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Ask questions in plain language. AI generates SQL,
+                    executes it against the database, and returns structured results.
+                </p>
+                <p class="text-muted small">
+                    Example: "Which carrier has the most delays in the last 30 days?"
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="nl-query" class="btn btn-primary w-100">Open NL → SQL</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="card-title mb-0">⚡ Module 2 – Delay Prediction</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Predict the probability of transport delay using a
+                    <strong>Random Forest</strong> machine learning model trained on
+                    route, carrier, weather, and season data.
+                </p>
+                <p class="text-muted small">
+                    Powered by Python FastAPI + scikit-learn.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="delay-prediction" class="btn btn-warning w-100">Open Delay Prediction</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 border-success">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">🗺️ Module 3 – Route Optimizer</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Find the <strong>cheapest</strong> and <strong>fastest</strong> routes
+                    between cities using the Dijkstra algorithm applied to the Serbian
+                    railway/road network.
+                </p>
+                <p class="text-muted small">
+                    Implemented in C# with a weighted graph.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="route-optimizer" class="btn btn-success w-100">Open Route Optimizer</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <strong>Stack:</strong>
+            Blazor WebAssembly &nbsp;|&nbsp;
+            ASP.NET Core Web API (.NET 8) &nbsp;|&nbsp;
+            SQL Server &nbsp;|&nbsp;
+            OpenAI GPT-4o mini &nbsp;|&nbsp;
+            Python FastAPI + scikit-learn
+        </div>
+    </div>
+</div>
