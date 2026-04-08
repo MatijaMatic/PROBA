@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LogisticsAI.Api/LogisticsAI.Api.csproj" />
+  <Project Path="LogisticsAI.Web/LogisticsAI.Web.csproj" />
+</Solution>

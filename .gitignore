@@ -1,0 +1,40 @@
+# .NET build artifacts
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Blazor publish output
+**/publish/
+**/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.venv
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Trained ML model (binary – regenerate with train_model.py)
+python/delay_model.pkl
+
+# Rider / JetBrains
+.idea/
+
+# VS Code settings (keep .vscode/launch.json and tasks.json if desired)
+.vscode/
+
+# macOS
+.DS_Store
+
+# NuGet packages
+*.nupkg
+packages/
